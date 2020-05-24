@@ -1,6 +1,8 @@
-<h1>Editing Diary</h1>
+<div class="container">
+  <h1 class="title">Editing Diary</h1>
 
-<%= render 'form', diary: @diary %>
+  <%= render 'form', diary: @diary %>
 
-<%= link_to 'Show', @diary %> |
-<%= link_to 'Back', diaries_path %>
+  <%= link_to 'Show', @diary, class: 'button is-info' %>
+  <%= link_to 'Back', diaries_path, class: 'button is-link' %>
+</div>

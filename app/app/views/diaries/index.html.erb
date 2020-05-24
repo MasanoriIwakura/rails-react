@@ -1,31 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<h1>Diaries</h1>
+  <h1 class="title">Diaries</h1>
 
-<%= react_component("Hello", { name: "Hello from react-rails." }) %>
+  <%= react_component("Hello", { name: "Hello from react-rails." }) %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @diaries.each do |diary| %>
+  <table class="table">
+    <thead>
       <tr>
-        <td><%= diary.title %></td>
-        <td><%= diary.body %></td>
-        <td><%= link_to 'Show', diary %></td>
-        <td><%= link_to 'Edit', edit_diary_path(diary) %></td>
-        <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Title</th>
+        <th>Body</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @diaries.each do |diary| %>
+        <tr>
+          <td><%= diary.title %></td>
+          <td><%= diary.body %></td>
+          <td><%= link_to 'Show', diary, class: 'button is-info' %></td>
+          <td><%= link_to 'Edit', edit_diary_path(diary), class: 'button is-link' %></td>
+          <td><%= link_to 'Destroy', diary, method: :delete, data: { confirm: 'Are you sure?' }, class: 'button is-danger' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Diary', new_diary_path %>
+  <br>
+
+  <%= link_to 'New Diary', new_diary_path, class: 'button is-primary' %>
+</div>

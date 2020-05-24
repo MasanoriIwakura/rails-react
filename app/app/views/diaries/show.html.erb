@@ -1,14 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @diary.title %>
-</p>
+  <div class="columns">
+    <div class="column">
+      <label class="label">Title:</label>
+    </div>
+    <div class="column">
+      <%= @diary.title %>
+    </div>
+  </div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @diary.body %>
-</p>
+  <div class="columns">
+    <div class="column">
+      <label class="label">Body:</label>
+    </div>
+    <div class="column">
+      <%= @diary.body %>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_diary_path(@diary) %> |
-<%= link_to 'Back', diaries_path %>
+  <%= link_to 'Edit', edit_diary_path(@diary), class: 'button is-info' %>
+  <%= link_to 'Back', diaries_path, class: 'button is-link' %>
+</div>
