@@ -17,7 +17,8 @@ COPY ./app /app
 # bundle install並列実行
 RUN bundle config --global jobs 10 && \
     bundle install && \
-    yarn install --check-files
+    yarn && \
+    rails db:migrate
 
 CMD ["rails", "s", "-p", "3000", "-b", "0.0.0.0"]
     

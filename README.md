@@ -41,7 +41,11 @@ $ cd app
 gem 'react-rails'
 
 $ bundle install
+$ rails webpacker:install
 $ rails webpacker:install:react
+$ rails webpacker:install:typescript
 $ rails generate react:install
-$ rails generate react:install
+
+# Generate Component
+$ rails generate react:component Hello name:string --ts
 ```
